@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+
+	<title>Hashedit (aka #edit)</title>
+	<meta name="apple-mobile-web-app-title" content="Home City Open">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-touch-fullscreen" content="yes" />
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="../css/app.css" rel="stylesheet" type="text/css">
+
+	<link rel="apple-touch-icon" href="images/touch-icon.png"/>
+
+	</head>
+
+  <body>
+	  <div class="background">
+	    <div class="color1"></div>
+	    <div class="color2"></div>
+	    <div class="color3"></div>
+	    <div class="color4"></div>
+	    <div class="color5"></div>
+	    <div class="color6"></div>
+	  </div>
+
+	  <header>
+	    <div class="left"></div>
+	    <img src="../images/hashedit-logo-transparent.png">
+	    <div class="right"></div>
+	  </header>
+
+	  <menu>
+	    <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/documentation">Documentation</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/contact">Contact</a></li>
+	    </ul>
+      </menu>
+
+	  <section class="main two-column">
+
+    	<nav>
+        	<h3>Getting Started</h3>
+            <ul>
+                <li><a href="/documentation" active>Installation</a></li>
+                <li><a href="/documentation/authentication.html">Authentication</a></li>
+                <li><a href="/documentation/editor.html">Setting up the Editor</a></li>
+            </ul>
+
+            <h3>How-Tos</h3>
+            <ul>
+                <li><a href="/documentation/plugins.html">Creating a Plugin</a></li>
+            </ul>
+
+            <h3>References</h3>
+            <ul>
+                <li><a href="/documentation/github.html">Github Repositories</a></li>
+            </ul>
+    	</nav>
+
+	    <div class="copy">
+	      <h1>Installation</h1>
+
+          <p>Hashedit provides you with a starting point for creating applications running on the Express framework using Node JS.  This starting point is called <strong>Hasedit Spark</strong>.  The basic process for installing Hashedit is shown below.</p>
+
+          <pre>> git clone https://github.com/madoublet/hashedit-spark .
+> cp config.sample.js config.js
+> npm install</pre>
+
+          <h2>Updating config.js</h2>
+
+          <p>The <code>config.js</code> which you copied from config.sample.js during the installation contains settings to run and authenticate your application.</p>
+
+          <pre>var exports = module.exports = {};
+
+// app configurations
+exports.app = {
+    "url": "https://my-hashedit-site.io",
+    "port": 3000
+};
+
+// setup google authentication
+exports.google = {
+    "clientId": "GOOGLE_CLIENT_ID",
+    "clientSecret": "GOOGLE_CLIENT_SECRET"
+};
+
+// setup authorized users
+exports.authorized = [
+{
+    "email": "sample@gmail.com",
+    "provider": "google"
+}
+];</pre>
+
+          <table class="table">
+             <col width="20%">
+             <thead>
+                 <tr>
+                    <th>Setting</th>
+                    <th>Description</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                    <td>app.url</td>
+                    <td>The URL for your app.  This is used as a base for the return URL from Google during authentication.</td>
+                 </tr>
+                 <tr>
+                    <td>app.port</td>
+                    <td>The port your app will run on.</td>
+                 </tr>
+                 <tr>
+                    <td>google.clientId</td>
+                    <td>The Client ID provided by Google when setting up authentication. See <a href="https://developers.google.com/identity/protocols/OAuth2WebServer">Using OAuth2 for Web Server Applications</a> on how to setup the client id and secret.</td>
+                 </tr>
+                 <tr>
+                    <td>google.clientSecret</td>
+                    <td>The Client Secret provided by Google when setting up authentication.</td>
+                 </tr>
+                 <tr>
+                    <td>authorized</td>
+                    <td>An array of authorized emails that can update pages. Add your gmail account here to authorize it. The only provider supported right now is Google.  Others will be added in the future.</td>
+                 </tr>
+             </tbody>
+          </table>
+
+	  </section>
+
+      <footer>
+
+    	  <p>Built by Matthew Smith, LLC</p>
+
+    	  <div class="menu">
+             <a href="/">Home</a>
+             <a href="/documentation">Documentation</a>
+             <a href="/store">Store</a>
+             <a href="/contact">Contact</a>
+    	  </div>
+
+	  </footer>
+
+
+	</body>
+
+</html>

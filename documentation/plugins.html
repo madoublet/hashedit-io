@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+
+	<title>Hashedit (aka #edit)</title>
+	<meta name="apple-mobile-web-app-title" content="Home City Open">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-touch-fullscreen" content="yes" />
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="../css/app.css" rel="stylesheet" type="text/css">
+
+	<link rel="apple-touch-icon" href="images/touch-icon.png"/>
+
+	</head>
+
+  <body>
+	  <div class="background">
+	    <div class="color1"></div>
+	    <div class="color2"></div>
+	    <div class="color3"></div>
+	    <div class="color4"></div>
+	    <div class="color5"></div>
+	    <div class="color6"></div>
+	  </div>
+
+	  <header>
+	    <div class="left"></div>
+	    <img src="../images/hashedit-logo-transparent.png">
+	    <div class="right"></div>
+	  </header>
+
+	  <menu>
+	    <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/documentation">Documentation</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/contact">Contact</a></li>
+	    </ul>
+      </menu>
+
+	  <section class="main two-column">
+
+    	<nav>
+        	<h3>Getting Started</h3>
+            <ul>
+                <li><a href="/documentation">Installation</a></li>
+                <li><a href="/documentation/authentication.html">Authentication</a></li>
+                <li><a href="/documentation/editor.html">Setting up the Editor</a></li>
+            </ul>
+
+            <h3>How-Tos</h3>
+            <ul>
+                <li><a href="/documentation/plugins.html" active>Creating a Plugin</a></li>
+            </ul>
+
+            <h3>References</h3>
+            <ul>
+                <li><a href="/documentation/github.html">Github Repositories</a></li>
+            </ul>
+    	</nav>
+
+	    <div class="copy">
+	      <h1>Creating a Plugin</h1>
+
+          <p>Hashedit was built to make creating plugins <strong>really</strong> easy.  Plugins for the editor are defined in the <code>hashedit.menu</code> array.  The code to create an H1 is shown below.  Pretty easy, right?</p>
+
+<pre>menu: [{
+    action: 'hashedit.h1',
+    selector: 'h1',
+    title: 'H1 Headline',
+    display: 'H1',
+    html: '&lt;h1&gt;Start Typing...&lt;/h1&gt;'
+}, ... ]</pre>
+
+          <h2>Creating your own Plugin</h2>
+
+          <p>A plugin is just a JavaScript Object (in Object Literal Notation) that is added to the menu.  The example below will create a new <code>&lt;div&gt;</code> with a <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> in it.  You must add it prior to calling <code>hashedit.setup()</code>.</p>
+
+<pre>// create plugin
+var myplugin;
+
+myplugin = {
+    action: 'hashedit.myplugin',
+    selector: '.myplugin',
+    title: 'My Plugin',
+    display: 'P',
+    html: '&lt;div class="myplugin"&gt;&lt;h1&gt;My Plugin Title&lt;/h1&gt;&lt;p&gt;My Plugin Text&lt;/p&gt;&lt;div&gt;'
+};
+
+// push to array
+hashedit.menu.push(myplugin);
+
+// setup
+hashedit.setup({...});</pre>
+
+        <p>Plugins can be as simple as a single element or as complex as you want.</p>
+
+        <h2>Making Text Editable</h2>
+
+        <p>
+            The following tags are automatically converted into content editable elements: p, h1, h2, h3, h4, h5, li, td, th,  blockquote, pre.
+        </p>
+
+        <h2>Custom Configurations</h2>
+
+        <p>
+            By default your plugin will be given the default configuration dialog that allows the end user to change the <code>id</code> and <code>class</code> of your plugin.  If you want to enable custom configurations, you can do so by creating your own configuration dialog and setting the <code>configure</code> method to show your dialog.  The built-in table plugin does this.  See code below.
+        </p>
+
+        <pre>// table plugin
+{
+    action: "hashedit.table",
+    ...
+    configure: function() {
+        document.querySelector('#hashedit-table-settings').setAttribute('visible', '');
+    },
+    ...
+}</pre>
+
+        <p>Hashedit has built-in bindings to automatically update the primary node's attributes from your dialog.  In the example below, updating the textbox will update the <code>id</code> of the primary node.  See <code>data-model="node.id"</code>.</p>
+
+<pre>
+&lt;input name="id" type="text" maxlength="128" data-model="node.id" placeholder="sample-id"&gt;
+</pre>
+
+        <p>Sometimes it is helpful to do more with bindings.  For instance, when you update the row count on a table, you add rows into the document as well.</p>
+
+<pre>// table plugin
+{
+    action: "hashedit.table",
+    ...
+    configure: function() {
+        document.querySelector('#hashedit-table-settings').setAttribute('visible', '');
+    },
+    change: function(attr, newValue, oldValue) {
+        ...
+    }
+}</pre>
+
+        <p>This will provide you with the attribute changed and the old and new values.</p>
+
+        <h2>Parameters</h2>
+
+        <table class="table">
+             <col width="20%">
+             <thead>
+                 <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                    <td>action</td>
+                    <td>A unique name for the plugin.</td>
+                 </tr>
+                 <tr>
+                    <td>selector</td>
+                    <td>A unique CSS selector for the plugin. It must uniquely (compared to other plugins) match the new element created an satisfy <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches">Element.matches</a></code>.</td>
+                 </tr>
+                 <tr>
+                    <td>title</td>
+                    <td>A text title for the plugin.</td>
+                 </tr>
+                 <tr>
+                    <td>display</td>
+                    <td>HTML to display the icon (or text) in the menu.  You can use text, an <code>&lt;img&gt;</code>, or <code>&lt;svg&gt;</code>.</td>
+                 </tr>
+                 <tr>
+                    <td>html</td>
+                    <td>The HTML created when the plugin is dropped on the canvas.</td>
+                 </tr>
+                 <tr>
+                    <td>configure</td>
+                    <td>Optional method called when a user selects to configure your plugin.</td>
+                 </tr>
+                 <tr>
+                    <td>change</td>
+                    <td>Optional method called when a parameter binding changes.</td>
+                 </tr>
+             </tbody>
+          </table>
+
+	    </div>
+
+	  </section>
+
+      <footer>
+
+    	  <p>Built by Matthew Smith, LLC</p>
+
+    	  <div class="menu">
+             <a href="/">Home</a>
+             <a href="/documentation">Documentation</a>
+             <a href="/store">Store</a>
+             <a href="/contact">Contact</a>
+    	  </div>
+
+	  </footer>
+
+
+	</body>
+
+</html>

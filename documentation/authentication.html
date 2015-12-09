@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+
+	<title>Hashedit (aka #edit)</title>
+	<meta name="apple-mobile-web-app-title" content="Home City Open">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-touch-fullscreen" content="yes" />
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="../css/app.css" rel="stylesheet" type="text/css">
+
+	<link rel="apple-touch-icon" href="images/touch-icon.png"/>
+
+	</head>
+
+  <body>
+	  <div class="background">
+	    <div class="color1"></div>
+	    <div class="color2"></div>
+	    <div class="color3"></div>
+	    <div class="color4"></div>
+	    <div class="color5"></div>
+	    <div class="color6"></div>
+	  </div>
+
+	  <header>
+	    <div class="left"></div>
+	    <img src="../images/hashedit-logo-transparent.png">
+	    <div class="right"></div>
+	  </header>
+
+	  <menu>
+	    <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/documentation">Documentation</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/contact">Contact</a></li>
+	    </ul>
+      </menu>
+
+	  <section class="main two-column">
+
+    	<nav>
+        	<h3>Getting Started</h3>
+            <ul>
+                <li><a href="/documentation">Installation</a></li>
+                <li><a href="/documentation/authentication.html" active>Authentication</a></li>
+                <li><a href="/documentation/editor.html">Setting up the Editor</a></li>
+            </ul>
+
+            <h3>How-Tos</h3>
+            <ul>
+                <li><a href="/documentation/plugins.html">Creating a Plugin</a></li>
+            </ul>
+
+            <h3>References</h3>
+            <ul>
+                <li><a href="/documentation/github.html">Github Repositories</a></li>
+            </ul>
+    	</nav>
+
+	    <div class="copy">
+	      <h1>Authentication</h1>
+
+          <p>Learn how to setup authentication for Hashedit.</p>
+
+          <h2>Google</h2>
+
+          <h3>1. Login to the <a href="https://console.developers.google.com/">Google Developer Console</a></h3>
+
+          <h3>2. Create a Project</h3>
+
+          <p>Select dropdown from header and click "Create a project...". Enter a name for your project (e.g. Hashedit Site).</p>
+
+          <h3>3. Enable and Manage APIS</h3>
+
+          <p>Found in the first card under "Use Google APIs".</p>
+
+          <h3>4. Get Credentials</h3>
+
+          <p>This is in the left menu. Select "Add Credentials".  Then select "OAuth 2.0 Client ID".  And, configure the consent screen. You should then be given the Client ID and Client Secret.  Put these in your config.js file.</p>
+
+          <h3>5. Enable Google+ API</h3>
+
+          <p>Go back to your Overview and search for Google+ and then enable that API.</p>
+
+          <h3>6. Add Authorized Redirect URI</h3>
+
+          <p>Go back to Credentials.  Select the Client ID you created.  Add an Authorized Redirect URI and a Authorized JavaScript origin.  See the table below for the format.</p>
+
+          <table class="table">
+             <col width="20%">
+             <thead>
+                 <tr>
+                    <th>Setting</th>
+                    <th>Format</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                    <td>Authorized Redirect URI</td>
+                    <td>http://my-hashedit-site.io/auth/google/callback</td>
+                 </tr>
+                 <tr>
+                    <td>Authorized JavaScript Origin</td>
+                    <td>http://my-hashedit-site.io</td>
+                 </tr>
+                 <tr>
+             </tbody>
+          </table>
+
+          <h3>7. Restart your application (not necessary if you are using nodemon)</h3>
+
+          <p>It might take a few minutes to get it work.</p>
+
+	    </div>
+
+	  </section>
+
+      <footer>
+
+    	  <p>Built by Matthew Smith, LLC</p>
+
+    	  <div class="menu">
+             <a href="/">Home</a>
+             <a href="/documentation">Documentation</a>
+             <a href="/store">Store</a>
+             <a href="/contact">Contact</a>
+    	  </div>
+
+	  </footer>
+
+
+	</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+
+	<title>Hashedit (aka #edit)</title>
+	<meta name="apple-mobile-web-app-title" content="Home City Open">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-touch-fullscreen" content="yes" />
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="../css/app.css" rel="stylesheet" type="text/css">
+
+	<link rel="apple-touch-icon" href="images/touch-icon.png"/>
+
+	</head>
+
+  <body>
+	  <div class="background">
+	    <div class="color1"></div>
+	    <div class="color2"></div>
+	    <div class="color3"></div>
+	    <div class="color4"></div>
+	    <div class="color5"></div>
+	    <div class="color6"></div>
+	  </div>
+
+	  <header>
+	    <div class="left"></div>
+	    <img src="../images/hashedit-logo-transparent.png">
+	    <div class="right"></div>
+	  </header>
+
+	  <menu>
+	    <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/documentation">Documentation</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/contact">Contact</a></li>
+	    </ul>
+      </menu>
+
+	  <section class="main two-column">
+
+    	<nav>
+        	<h3>Getting Started</h3>
+            <ul>
+                <li><a href="/documentation">Installation</a></li>
+                <li><a href="/documentation/authentication.html">Authentication</a></li>
+                <li><a href="/documentation/editor.html" active>Setting up the Editor</a></li>
+            </ul>
+
+            <h3>How-Tos</h3>
+            <ul>
+                <li><a href="/documentation/plugins.html">Creating a Plugin</a></li>
+            </ul>
+
+            <h3>References</h3>
+            <ul>
+                <li><a href="/documentation/github.html">Github Repositories</a></li>
+            </ul>
+    	</nav>
+
+	    <div class="copy">
+	      <h1>Setting up the Editor</h2>
+
+          <p>The editor is built as a JavaScript singleton.  You create the editor by running <code>hashedit.setup</code> as shown below.</p>
+
+<pre>
+// setup hashedit
+hashedit.setup({
+    path: '/node_modules/hashedit/',
+    stylesheet: '/node_modules/hashedit/dist/hashedit-min.css',
+    sortable: ['.sortable, .column, .carousel-caption']
+});
+</pre>
+
+        <p>
+            Parameters for setup are shown in the table below.
+        </p>
+
+        <table class="table">
+             <col width="20%">
+             <thead>
+                 <tr>
+                    <th>Parameter</th>
+                    <th>Description</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                    <td>path</td>
+                    <td>Required. The path (absolute or relative URL) to the editor.</td>
+                 </tr>
+                 <tr>
+                    <td>stylesheet</td>
+                    <td>Required. The path (absolute or relative URL) to the hashedit stylesheet.</td>
+                 </tr>
+                 <tr>
+                    <td>sortable</td>
+                    <td>Required. An array of selectors to the containers that are sortable.  These containers must be contained in a [hashedit] element.</td>
+                 </tr>
+                 <tr>
+                    <td>demo</td>
+                    <td>Optional. (true | false) Whether to show the editor in demo mode.  Authentication is bypassed, but you cannot save from Demo mode.</td>
+                 </tr>
+             </tbody>
+          </table>
+
+        <p>Hashedit requires the following hierarchy for sorting to work.  Sortable items (e.g. shown as the H1 and P tag below) must be contained in a "sortable" container as specified in the <code>sortable</code> parameter.  The sortable container must be descendent of a container with a <code>hashedit</code> and <code>hasehdit-selector</code> attribute.</p>
+
+<pre>&lt;div id="my-container" class="container" hashedit hashedit-selector="#my-container"&gt;
+    &lt;div class="sortable"&gt;
+        &lt;h1&gt;Sample Paragraph&lt;/h1&gt;
+        &lt;p&gt;Sample Paragraph&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+        <p>When you click save in the editor, an array is sent back to the server with a selector and updated HTML for each [hashedit] element.</p>
+
+
+	    </div>
+
+	  </section>
+
+      <footer>
+
+    	  <p>Built by Matthew Smith, LLC</p>
+
+    	  <div class="menu">
+             <a href="/">Home</a>
+             <a href="/documentation">Documentation</a>
+             <a href="/store">Store</a>
+             <a href="/contact">Contact</a>
+    	  </div>
+
+	  </footer>
+
+
+	</body>
+
+</html>

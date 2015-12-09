@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+
+	<title>Hashedit (aka #edit)</title>
+	<meta name="apple-mobile-web-app-title" content="Home City Open">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-touch-fullscreen" content="yes" />
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="css/app.css" rel="stylesheet" type="text/css">
+
+	<link rel="apple-touch-icon" href="images/touch-icon.png"/>
+
+	</head>
+
+  <body>
+	  <div class="background">
+	    <div class="color1"></div>
+	    <div class="color2"></div>
+	    <div class="color3"></div>
+	    <div class="color4"></div>
+	    <div class="color5"></div>
+	    <div class="color6"></div>
+	  </div>
+
+	  <header>
+	    <div class="left"></div>
+	    <img src="images/hashedit-logo-transparent.png">
+	    <div class="right"></div>
+      </header>
+
+      <menu>
+	    <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/documentation">Documentation</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/contact">Contact</a></li>
+	    </ul>
+      </menu>
+
+	  <div class="divider"></div>
+
+	  <section class="hero">
+
+	    <div id="flip-demo" class="hero-card">
+
+      	    <div class="hero-card-front">
+      	      <p id="edit-text"></p>
+      	      <img class="" src="images/url-go.png">
+      	      <img active src="images/url-go-active.png">
+      	    </div>
+      	    <div class="hero-card-back">
+      	      <p class="faux-menu">
+        	      <a class="bars"><svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></g></svg></a>
+        	      <a class="faux-menu-1">H1</a>
+        	      <a class="faux-menu-2">H2</a>
+        	      <a class="faux-menu-3">H3</a>
+        	      <a class="faux-menu-4">H4</a>
+        	      <a class="faux-menu-5">H5</a>
+        	      <a class="faux-menu-6"><svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d='M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12.17c-.74 0-1.33.6-1.33 1.33s.6 1.33 1.33 1.33 1.33-.6 1.33-1.33-.59-1.33-1.33-1.33zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z'></path></g></svg></a>
+        	      <a class="faux-menu-7"><svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'></path></g></svg></a>
+        	      <a class="check"><svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><g><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" class="style-scope iron-icon"></path></g></svg></a>
+
+      	      </p>
+      	    </div>
+	    </div>
+
+
+        <section class="copy">
+            <h1>A better way to update your website</h1>
+            <p>Add #edit to the end of a URL, make changes, save. That's it.</p>
+        </section>
+
+        <div class="divider"></div>
+	  </section>
+
+	  <div id="main-content" hashedit hashedit-selector="#main-content">
+
+    	  <section id="about-section" class="about">
+
+    	    <p>Hashedit (aka #edit) is a <strong>free, open source</strong> visual editor for your website with support for rich text editing, drag-and-drop reordering, image uploading and more.  Hashedit provides <strong>"just enough"</strong> content management while not getting in your way from developing a beautiful website.</p>
+
+    	    <p class="forward">
+    	     <a href="demo.html#edit">Try our demo</a>
+    	    </p>
+
+    	  </section>
+
+    	  <section class="content js">
+
+    	    <div class="copy">
+    	      <h1>Built with Node JS. Powered by NPM.</h1>
+            <p>Hashedit is built with Express&mdash;the fast, opinionated framework built on Node JS. The app is packaged nicely using NPM. So, you can be assured it will work well with your existing sites.</p>
+    	    </div>
+
+    	  </section>
+
+    	  <section class="content install alternate">
+
+    	    <div class="copy" style="padding-top: 25px">
+    	      <h1>Easy to Install</h1>
+<pre>> git clone https://github.com/madoublet/hashedit-spark .
+> cp config.sample.js config.js
+> nano config.js
+> npm install</pre>
+
+          <p>Really, thats it.</p>
+    	    </div>
+
+    	  </section>
+
+    	  <section class="content cart">
+
+    	    <div class="copy">
+    	      <h1>A Store featuring sites, not themes</h1>
+            <p>Themes are clunky and require a lot of extra work. And, when is the last time a client asked you for a theme? That is why our marketplace features fully functioning sites. Just download, style, and deploy.</p>
+    	    </div>
+
+    	  </section>
+
+    	  <section class="content small alternate">
+
+    	    <div class="copy">
+    	      <h1>Built Small</h1>
+              <p>Hashedit has been intentionally engineered to be small.  Not only is the filesize (&lt;100kb) small, but the feature set is small, as well. Our goal is to build a simple foundation that provides "just enough" content management while enabling you to easily extend the app to meet your needs.</p>
+    	    </div>
+
+    	  </section>
+
+    	  <section class="content plug">
+
+    	    <div class="copy">
+    	      <h1>Actually Easy Plugins</h1>
+              <p>Wouldn't it be great if it took minutes, not hours to build a plugin? With Hashedit, you just build a quick JS object containing the HTML you want rendered, and you are done.  Really.  It is actually easy. <a href="/documentation/plugins.html">Learn more</a></p>
+    	    </div>
+
+    	  </section>
+
+	  </div>
+	  <!-- /.main-content -->
+
+	  <footer>
+
+    	  <p>Built by Matthew Smith, LLC</p>
+
+    	  <div class="menu">
+        	 <a href="/">Home</a>
+             <a href="/documentation">Documentation</a>
+             <a href="/store">Store</a>
+             <a href="/contact">Contact</a>
+    	  </div>
+
+	  </footer>
+
+
+	</body>
+
+	<script src="/js/hero.js"></script>
+
+</html>
