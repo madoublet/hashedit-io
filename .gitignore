@@ -1,12 +1,15 @@
 # Logs
 logs
 *.log
+<<<<<<< HEAD
 config.js
 realtor-kit/*
 credentials.md
 index-sample.html
 test.html
 pages.json
+=======
+>>>>>>> 6922abdf6471f29d945d14e4c5646c937c03b686
 
 # Runtime data
 pids
@@ -31,7 +34,10 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+<<<<<<< HEAD
 bower_components
 
 # Dev
 public/hashedit
+=======
+>>>>>>> 6922abdf6471f29d945d14e4c5646c937c03b686
