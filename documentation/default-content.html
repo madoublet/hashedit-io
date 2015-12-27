@@ -51,7 +51,7 @@
                 <li><a href="/documentation">Installation</a></li>
                 <li><a href="/documentation/authentication.html">Authentication</a></li>
                 <li><a href="/documentation/editor.html">Setting up the Editor</a></li>
-                <li><a href="/documentation/default-content.html">Default Content</a></li>
+                <li><a href="/documentation/default-content.html" active>Default Content</a></li>
             </ul>
 
             <h3>How-Tos</h3>
@@ -61,7 +61,7 @@
 
             <h3>References</h3>
             <ul>
-                <li><a href="/documentation/github.html" active>Github Repositories</a></li>
+                <li><a href="/documentation/github.html">Github Repositories</a></li>
             </ul>
 
             <h3>Add-ons</h3>
@@ -71,32 +71,17 @@
     	</nav>
 
 	    <div class="copy">
-	      <h1>Themes</h1>
+	      <h1>Theming Sites</h1>
 
-          <p>Hashedit was built from the ground-up to be modular.  So, you can use the whole stack, just the editor, or the static website API. </p>
-          <h2>Hashedit Spark</h2>
+          <p>Hashedit makes it easy to maintain a consistent look-and-feel across your site.</p>
 
-          <p>The goal of the Hashedit Spark repository is to provide you with a full stack starting point for your Hashedit website.  It contains the Express JS parts and brings in the other two Hashedit repos as dependencies.</p>
+          <h2>Default Content</h2>
 
-          <p><a href="https://github.com/madoublet/hashedit-spark">madoublet/hashedit-spark</a>
+          <p>The primary mechanism for maintaining a consistent look-and-feel is default content.  By specifying default content, you ensure that new pages created in Hashedit match the look-and-feel of your site.  You can set default content by updating the .default.html (note the leading dot) file in your root directory (e.g. <code>public/.default.html</code>).</p>
 
-          <h2>Static Kit</h2>
-
-          <p>The goal of the Static Kit repository is to provide you with a REST API for authenticating a user via a Google login and access to static resources for your website.  It is specifically built around the needs of Hashedit but is generic enough that it could be used independently of the editor.</p>
-
-          <p><a href="https://github.com/madoublet/static-kit">madoublet/static-kit</a>
-
-          <h2>Hashedit</h2>
-
-          <p>The Hashedit repository is the client library that implements the visual editor.  It can be used in conjunction with Hashedit Spark, but you can also modify it for your own needs.</p>
-
-          <p><a href="https://github.com/madoublet/hashedit">madoublet/hashedit</a>
-
-          <h2>Hashedit.io</h2>
-
-          <p>The Hashedit-io repository mirrors this site so that you can submit documentation additions or corrections via a pull request.</p>
-
-          <p><a href="https://github.com/madoublet/hashedit-io">madoublet/hashedit-io</a>
+          <p>
+              You can also specify a default content file in each subdirectory of your site.  This will ensure that all files in that directory are created using that default content (e.g. <code>public/page/.default.html</code> or <code>public/product/.default.html</code>).
+          </p>
 
 	    </div>
 

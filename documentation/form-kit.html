@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+
+	<title>Hashedit - Form Kit Documentation</title>
+	<meta name="apple-mobile-web-app-title" content="Home City Open">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-touch-fullscreen" content="yes" />
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="../css/app.css" rel="stylesheet" type="text/css">
+
+	<link rel="apple-touch-icon" href="images/touch-icon.png"/>
+
+	</head>
+
+  <body>
+	  <div class="background">
+	    <div class="color1"></div>
+	    <div class="color2"></div>
+	    <div class="color3"></div>
+	    <div class="color4"></div>
+	    <div class="color5"></div>
+	    <div class="color6"></div>
+	  </div>
+
+	  <header>
+	    <div class="left"></div>
+	    <img src="../images/hashedit-logo-transparent.png">
+	    <div class="right"></div>
+	  </header>
+
+	  <menu>
+	    <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/documentation">Documentation</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/contact">Contact</a></li>
+	    </ul>
+      </menu>
+
+	  <section class="main two-column">
+
+    	<nav>
+        	<h3>Getting Started</h3>
+            <ul>
+                <li><a href="/documentation">Installation</a></li>
+                <li><a href="/documentation/authentication.html">Authentication</a></li>
+                <li><a href="/documentation/editor.html">Setting up the Editor</a></li>
+                <li><a href="/documentation/default-content.html">Default Content</a></li>
+            </ul>
+
+            <h3>How-Tos</h3>
+            <ul>
+                <li><a href="/documentation/plugins.html">Creating a Plugin</a></li>
+            </ul>
+
+            <h3>References</h3>
+            <ul>
+                <li><a href="/documentation/github.html">Github Repositories</a></li>
+            </ul>
+
+            <h3>Add-ons</h3>
+            <ul>
+                <li><a href="/documentation/form-kit.html" active>Form Kit</a></li>
+            </ul>
+    	</nav>
+
+	    <div class="copy">
+	      <h1>Form Kit</h2>
+
+          <p>Form Kit is a developer kit built for Hashedit that enables you to process forms, send emails in response to submitted forms, and view submitted forms within the Hashedit admin.</p>
+
+          <h2>Installing Form Kit in Node</h2>
+
+          <p>After purchasing Form Kit from our store, you will receive a zip file containing all the client and server code.  Installing Form Kit from this zip file is easy. Note: If you purchased a theme with Form Kit included, installation is already done for you.</p>
+
+          <h3>1. Create a Directory for Form Kit</h3>
+
+          <p>Start by creating a directory for Form Kit in your application via the command line or IDE. We recommend using the name <code>form-kit</code>.
+
+<pre>
+// create directory
+mkdir form-kit
+</pre>
+
+        <h3>2. Extract the contents of your ZIP file into that directory</h3>
+
+        <p>Use the command line or your favorite IDE.</p>
+
+        <h3>3. Link to Form Kit in your application and call the setup function</h3>
+
+<pre>
+var formKit = require('./form-kit');
+
+// setup the auth
+staticKit.setup(app, config);
+
+// setup formKit
+formKit.setup(app, config);
+</pre>
+
+        <h3>4. Setup email</h3>
+
+        <p>In your apps existing config.js file, setup smtp and email settings.  Form Kit uses <a href="https://github.com/eleith/emailjs">emailjs</a> to send email.  The SMTP object below is passed directly to <code>email.server.connect()</code>.
+
+<pre>
+// set up smtp and email
+exports.smtp = {
+    user: "sample@hashedit.io",
+    password: "password",
+    host: "smtp.myserver.com",
+    tls: true
+}
+
+exports.email = {
+    to: "sample@hashedit.io",
+    toName: "Matthew Smith",
+    from: "sample@hashedit.io",
+    fromName: "Matthew Smith"
+}
+</pre>
+
+        <h2>Setting up Form Kit on the Client</h2>
+
+        <h3>1. Create a Form</h3>
+
+        <p>The form should have a <code>form-kit-form</code> attribute, a <code>data-subject</code> attribute, and a  <code>data-description</code> attribute. The easiest way is to copy the form below and modify it to your needs.  You should also include a <code>.form-kit-message</code> for both success (<code>form-kit-success</code>) and failure (<code>form-kit-failure</code>) cases.</p>
+
+<pre>
+&lt;form form-kit-form name="contact" data-subject="name" data-description="email"&gt;
+
+    &lt;div class="field"&gt;
+        &lt;label&gt;* Name&lt;/label&gt;
+        &lt;input type="text" name="name" required&gt;
+    &lt;/div&gt;
+
+    &lt;div class="field"&gt;
+        &lt;label&gt;* Email&lt;/label&gt;
+        &lt;input type="email" name="email" required&gt;
+    &lt;/div&gt;
+
+    &lt;div class="field"&gt;
+        &lt;label&gt;Phone&lt;/label&gt;
+        &lt;input type="phone" name="phone"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="field"&gt;
+        &lt;label&gt;Preference&lt;/label&gt;
+        &lt;select name="preference"&gt;
+            &lt;option value="email"&gt;Email&lt;/option&gt;
+            &lt;option value="phone"&gt;Phone&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+
+    &lt;div class="field"&gt;
+        &lt;label&gt;Additional Details&lt;/label&gt;
+        &lt;textarea name="detail"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+
+    &lt;div class="action"&gt;
+        &lt;input type="submit" value="Contact"&gt;
+        &lt;span class="form-kit-message" form-kit-success&gt;
+        &lt;svg viewBox="0 0 24 24"&gt;&lt;g&gt;&lt;path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;
+        Form submitted successfully
+        &lt;/span&gt;
+        &lt;span class="form-kit-message" form-kit-failure&gt;
+        &lt;svg viewBox="0 0 24 24"&gt;&lt;g&gt;&lt;path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;
+        There was an error submitting the form
+        &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+
+        <h3>2. Add the Form Kit CSS and JS</h3>
+
+<pre>
+&lt;!-- Form Kit CSS typically in the head of the document --&gt;
+&lt;link type="text/css" href="/form-kit/client/form.css" rel="stylesheet"&gt;
+
+&lt;!-- Form Kit CSS typically before the /body of the document --&gt;
+&lt;script src="/form-kit/client/form.js"&gt;&lt;/script&gt;
+
+&lt;!-- setup Form Kit before hashedit.setup() --&gt;
+&lt;script&gt;
+
+    // setup formKit
+    formKit.setup();
+
+&lt;/scriptt&gt;
+
+</pre>
+
+	    </div>
+
+	  </section>
+
+      <footer>
+
+    	  <p>Built by Matthew Smith, LLC</p>
+
+    	  <div class="menu">
+             <a href="/">Home</a>
+             <a href="/documentation">Documentation</a>
+             <a href="/store">Store</a>
+             <a href="/contact">Contact</a>
+    	  </div>
+
+	  </footer>
+
+
+	</body>
+
+</html>

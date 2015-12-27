@@ -51,6 +51,7 @@
                 <li><a href="/documentation">Installation</a></li>
                 <li><a href="/documentation/authentication.html">Authentication</a></li>
                 <li><a href="/documentation/editor.html" active>Setting up the Editor</a></li>
+                <li><a href="/documentation/default-content.html">Default Content</a></li>
             </ul>
 
             <h3>How-Tos</h3>
@@ -61,6 +62,11 @@
             <h3>References</h3>
             <ul>
                 <li><a href="/documentation/github.html">Github Repositories</a></li>
+            </ul>
+
+            <h3>Add-ons</h3>
+            <ul>
+                <li><a href="/documentation/form-kit.html">Form Kit</a></li>
             </ul>
     	</nav>
 
@@ -73,7 +79,7 @@
 // setup hashedit
 hashedit.setup({
     path: '/node_modules/hashedit/',
-    stylesheet: '/node_modules/hashedit/dist/hashedit-min.css',
+    stylesheet: ['/node_modules/hashedit/dist/hashedit-min.css'],
     sortable: ['.sortable, .column, .carousel-caption']
 });
 </pre>

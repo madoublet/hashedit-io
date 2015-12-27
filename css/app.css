@@ -462,6 +462,7 @@ section.main{
     background-color: #fff;
     margin-top: 142px;
     padding: 50px 10px;
+    min-height: 800px;
 }
 
     section.main h1{
@@ -543,6 +544,8 @@ section.main{
     	border: 1px solid #ddd;
     	background-color: #f0f0f0;
     	overflow: scroll;
+    	width: 100%;
+    	max-width: 800px;
     }
 
     section.main.two-column nav {
@@ -609,6 +612,24 @@ section.main{
 
     .hero-card{
       top: 175px;
+    }
+
+    /* images */
+    section.content.static{
+        background: url(../images/static.png) no-repeat 0 0;
+        background-size: 300px;
+    }
+
+    /* images */
+    section.content.bolt{
+        background: url(../images/bolt.png) no-repeat 100% 0;
+        background-size: 300px;
+    }
+
+    /* images */
+    section.content.framework{
+        background: url(../images/framework.png) no-repeat 100% 0;
+        background-size: 300px;
     }
 
     /* images */
