@@ -86,7 +86,7 @@
              <col width="20%">
              <thead>
                  <tr>
-                    <th>Setting</th>
+                    <th>Option</th>
                     <th>Format</th>
                  </tr>
              </thead>
@@ -111,6 +111,26 @@
           <p>Adds a local user. A local user's credentials are stored on the server.  He/she logs in with a username and password (versus Google or other third party).</p>
 
           <pre>> node hashedit -e sample@email.com -p mypassword</pre>
+
+          <table class="table">
+             <col width="20%">
+             <thead>
+                 <tr>
+                    <th>Option</th>
+                    <th>Format</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                    <td>-e [email]</td>
+                    <td>The email used to login.</td>
+                 </tr>
+                 <tr>
+                    <td>-p [password]</td>
+                    <td>The password used to login (stored as bcrypt hash)</td>
+                 </tr>
+             </tbody>
+          </table>
 	    </div>
 
 	  </section>

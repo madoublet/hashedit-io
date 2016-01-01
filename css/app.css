@@ -497,19 +497,11 @@ section.main{
         color: #777;
     }
 
-    section.main pre{
-    	margin: 0 0 25px 0 !important;
-    	padding: 25px;
-    	font-size: 15px;
-    	border: 1px solid #ddd;
-    	background-color: #f0f0f0;
-    	overflow: scroll;
-    }
-
     section.main .table{
         margin: 0 0 25px 0;
         padding: 0;
         border-collapse: collapse;
+        width: 100%;
     }
 
     section.main .table th, section.main .table td{
@@ -538,14 +530,14 @@ section.main{
 
     /* pre */
     section.main pre{
-    	margin: 0;
+    	margin: 0 10px 25px 0;
     	padding: 25px;
     	font-size: 15px;
     	border: 1px solid #ddd;
     	background-color: #f0f0f0;
     	overflow: scroll;
     	width: 100%;
-    	max-width: 800px;
+    	width: calc(100% - 15px);
     }
 
     section.main.two-column nav {
