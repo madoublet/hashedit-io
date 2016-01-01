@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
 	<head>
 
-	<title>Hashedit - Documentation - Default Content</title>
+	<title>Hashedit - Documentation - Command Line Interface (CLI)</title>
 	<meta name="apple-mobile-web-app-title" content="Home City Open">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -51,8 +51,8 @@
                 <li><a href="/documentation">Installation</a></li>
                 <li><a href="/documentation/authentication.html">Authentication</a></li>
                 <li><a href="/documentation/editor.html">Setting up the Editor</a></li>
-                <li><a href="/documentation/default-content.html" active>Default Content</a></li>
-                <li><a href="/documentation/cli.html">Command Line Interface</a></li>
+                <li><a href="/documentation/default-content.html">Default Content</a></li>
+                <li><a href="/documentation/cli.html" active>Command Line Interface</a></li>
             </ul>
 
             <h3>How-Tos</h3>
@@ -72,18 +72,45 @@
     	</nav>
 
 	    <div class="copy">
-	      <h1>Theming Sites</h1>
+	      <h1>Command Line Interface (CLI)</h1>
 
-          <p>Hashedit makes it easy to maintain a consistent look-and-feel across your site.</p>
+          <p>Hashedit has an easy-to-use CLI to speed setup and adding users.</p>
 
-          <h2>Default Content</h2>
+          <h2>Setup</h2>
 
-          <p>The primary mechanism for maintaining a consistent look-and-feel is default content.  By specifying default content, you ensure that new pages created in Hashedit match the look-and-feel of your site.  You can set default content by updating the .default.html (note the leading dot) file in your root directory (e.g. <code>public/.default.html</code>).</p>
+          <p>Initial setup that creates the configuration files and adds a user.  Adding a user is optional if you intend to use third party authentication.</p>
 
-          <p>
-              You can also specify a default content file in each subdirectory of your site.  This will ensure that all files in that directory are created using that default content (e.g. <code>public/page/.default.html</code> or <code>public/product/.default.html</code>).
-          </p>
+          <pre>> node hashedit -s http://mysite.com -e sample@email.com -p mypassword</pre>
 
+          <table class="table">
+             <col width="20%">
+             <thead>
+                 <tr>
+                    <th>Setting</th>
+                    <th>Format</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                    <td>-s [url]</td>
+                    <td>Runs the setup: (1) creates the ./config.js and ./data/users.json files (2) copies the URL into ./config.s</td>
+                 </tr>
+                 <tr>
+                    <td>-e [email]</td>
+                    <td>The email used to login.</td>
+                 </tr>
+                 <tr>
+                    <td>-p [password]</td>
+                    <td>The password used to login (stored as bcrypt hash)</td>
+                 </tr>
+             </tbody>
+          </table>
+
+          <h2>Add Local User</h2>
+
+          <p>Adds a local user. A local user's credentials are stored on the server.  He/she logs in with a username and password (versus Google or other third party).</p>
+
+          <pre>> node hashedit -e sample@email.com -p mypassword</pre>
 	    </div>
 
 	  </section>
