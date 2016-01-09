@@ -9,16 +9,16 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes">
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="../css/app.css" rel="stylesheet" type="text/css">
 
-	<link rel="apple-touch-icon" href="images/touch-icon.png"/>
+	<link rel="apple-touch-icon" href="images/touch-icon.png">
 
 	</head>
 
-  <body>
+  <body hashedit-sortable=".copy">
 	  <div class="background">
 	    <div class="color1"></div>
 	    <div class="color2"></div>
@@ -43,12 +43,12 @@
 	    </ul>
       </menu>
 
-	  <section class="main" style="min-height: 500px">
+	  <section id="main" class="main two-column" hashedit="" hashedit-selector="#main">
 
 	    <div class="copy">
 	      <h1>Contact</h1>
 
-          <p>Email: <a href="mailto:matt@matthewsmith.com">matt@matthewsmith.com</a></p>
+          <p>You can reach out via email or twitter.</p><p>Email: <a href="mailto:matt@matthewsmith.com">matt@matthewsmith.com</a></p>
           <p>Twitter: <a href="http://twitter.com/matthewsmith">@matthewsmith</a></p>
 
 	    </div>
@@ -67,6 +67,10 @@
     	  </div>
 
 	  </footer>
+
+	  <!-- hashedit snippet -->
+      <script hashedit-exclude="">var path=window.location.pathname;-1!=window.location.href.indexOf("#edit")&&(window.location="/edit?url="+path),window.onhashchange=function(){-1!=window.location.href.indexOf("#edit")&&(window.location="/edit?url="+path)};</script>
+
 
 
 	</body>

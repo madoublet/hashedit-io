@@ -18,7 +18,7 @@
 
 	</head>
 
-  <body>
+  <body hashedit-sortable=".copy">
 	  <div class="background">
 	    <div class="color1"></div>
 	    <div class="color2"></div>
@@ -43,7 +43,7 @@
 	    </ul>
       </menu>
 
-	  <section class="main two-column">
+	  <section id="main" class="main two-column" hashedit hashedit-selector="#main">
 
     	<nav>
         	<h3>Getting Started</h3>
@@ -209,6 +209,9 @@ hashedit.setup({...});</pre>
     	  </div>
 
 	  </footer>
+
+	  <!-- hashedit snippet -->
+      <script hashedit-exclude>var path=window.location.pathname;-1!=window.location.href.indexOf("#edit")&&(window.location="/edit?url="+path),window.onhashchange=function(){-1!=window.location.href.indexOf("#edit")&&(window.location="/edit?url="+path)};</script>
 
 
 	</body>

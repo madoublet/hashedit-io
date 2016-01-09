@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
 	<head>
 
-	<title>Hashedit - Documentation - Editor</title>
+	<title>Hashedit - Documentation - Github</title>
 	<meta name="apple-mobile-web-app-title" content="Home City Open">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -50,7 +50,7 @@
             <ul>
                 <li><a href="/documentation">Installation</a></li>
                 <li><a href="/documentation/authentication.html">Authentication</a></li>
-                <li><a href="/documentation/editor.html" active>Setting up the Editor</a></li>
+                <li><a href="/documentation/editor.html">Setting up the Editor</a></li>
                 <li><a href="/documentation/default-content.html">Default Content</a></li>
                 <li><a href="/documentation/cli.html">Command Line Interface</a></li>
             </ul>
@@ -62,7 +62,7 @@
 
             <h3>References</h3>
             <ul>
-                <li><a href="/documentation/github.html">Github Repositories</a></li>
+                <li><a href="/documentation/github.html" active>Github Repositories</a></li>
             </ul>
 
             <h3>Add-ons</h3>
@@ -72,62 +72,9 @@
     	</nav>
 
 	    <div class="copy">
-	      <h1>Setting up the Editor</h2>
+	      <h1>New Documentation</h1>
 
-          <p>The editor is built as a JavaScript singleton.  You create the editor by running <code>hashedit.setup</code> as shown below.</p>
-
-<pre>
-// setup hashedit
-hashedit.setup({
-    path: '/node_modules/hashedit/',
-    stylesheet: ['/node_modules/hashedit/dist/hashedit-min.css'],
-    sortable: ['.sortable, .column, .carousel-caption']
-});
-</pre>
-
-        <p>
-            Parameters for setup are shown in the table below.
-        </p>
-
-        <table class="table">
-             <col width="20%">
-             <thead>
-                 <tr>
-                    <th>Parameter</th>
-                    <th>Description</th>
-                 </tr>
-             </thead>
-             <tbody>
-                 <tr>
-                    <td>path</td>
-                    <td>Required. The path (absolute or relative URL) to the editor.</td>
-                 </tr>
-                 <tr>
-                    <td>stylesheet</td>
-                    <td>Required. The path (absolute or relative URL) to the hashedit stylesheet.</td>
-                 </tr>
-                 <tr>
-                    <td>sortable</td>
-                    <td>Required. An array of selectors to the containers that are sortable.  These containers must be contained in a [hashedit] element.</td>
-                 </tr>
-                 <tr>
-                    <td>demo</td>
-                    <td>Optional. (true | false) Whether to show the editor in demo mode.  Authentication is bypassed, but you cannot save from Demo mode.</td>
-                 </tr>
-             </tbody>
-          </table>
-
-        <p>Hashedit requires the following hierarchy for sorting to work.  Sortable items (e.g. shown as the H1 and P tag below) must be contained in a "sortable" container as specified in the <code>sortable</code> parameter.  The sortable container must be descendent of a container with a <code>hashedit</code> and <code>hasehdit-selector</code> attribute.</p>
-
-<pre>&lt;div id="my-container" class="container" hashedit hashedit-selector="#my-container"&gt;
-    &lt;div class="sortable"&gt;
-        &lt;h1&gt;Sample Paragraph&lt;/h1&gt;
-        &lt;p&gt;Sample Paragraph&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-        <p>When you click save in the editor, an array is sent back to the server with a selector and updated HTML for each [hashedit] element.</p>
-
+          <p>This is a placeholder for new documentation.</p>
 
 	    </div>
 

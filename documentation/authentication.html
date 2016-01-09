@@ -9,16 +9,16 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes">
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="../css/app.css" rel="stylesheet" type="text/css">
 
-	<link rel="apple-touch-icon" href="images/touch-icon.png"/>
+	<link rel="apple-touch-icon" href="images/touch-icon.png">
 
 	</head>
 
-  <body>
+  <body hashedit-sortable=".copy">
 	  <div class="background">
 	    <div class="color1"></div>
 	    <div class="color2"></div>
@@ -43,13 +43,13 @@
 	    </ul>
       </menu>
 
-	  <section class="main two-column">
+	  <section id="main" class="main two-column" hashedit="" hashedit-selector="#main">
 
     	<nav>
         	<h3>Getting Started</h3>
             <ul>
                 <li><a href="/documentation">Installation</a></li>
-                <li><a href="/documentation/authentication.html" active>Authentication</a></li>
+                <li><a href="/documentation/authentication.html" active="">Authentication</a></li>
                 <li><a href="/documentation/editor.html">Setting up the Editor</a></li>
                 <li><a href="/documentation/default-content.html">Default Content</a></li>
                 <li><a href="/documentation/cli.html">Command Line Interface</a></li>
@@ -82,15 +82,15 @@
 
           <h3>2. Create a Project</h3>
 
-          <p>Select dropdown from header and click "Create a project...". Enter a name for your project (e.g. Hashedit Site).</p>
+          <p>Select dropdown from header and click &quot;Create a project...&quot;. Enter a name for your project (e.g. Hashedit Site).</p>
 
           <h3>3. Enable and Manage APIS</h3>
 
-          <p>Found in the first card under "Use Google APIs".</p>
+          <p>Found in the first card under &quot;Use Google APIs&quot;.</p>
 
           <h3>4. Get Credentials</h3>
 
-          <p>This is in the left menu. Select "Add Credentials".  Then select "OAuth 2.0 Client ID".  And, configure the consent screen. You should then be given the Client ID and Client Secret.  Put these in your config.js file.</p>
+          <p>This is in the left menu. Select &quot;Add Credentials&quot;.  Then select &quot;OAuth 2.0 Client ID&quot;.  And, configure the consent screen. You should then be given the Client ID and Client Secret.  Put these in your config.js file.</p>
 
           <h3>5. Enable Google+ API</h3>
 
@@ -101,8 +101,8 @@
           <p>Go back to Credentials.  Select the Client ID you created.  Add an Authorized Redirect URI and a Authorized JavaScript origin.  See the table below for the format.</p>
 
           <table class="table">
-             <col width="20%">
-             <thead>
+             <colgroup><col width="20%">
+             </colgroup><thead>
                  <tr>
                     <th>Setting</th>
                     <th>Format</th>
@@ -118,7 +118,7 @@
                     <td>http://my-hashedit-site.io</td>
                  </tr>
                  <tr>
-             </tbody>
+             </tr></tbody>
           </table>
 
           <h3>7. Restart your application (not necessary if you are using nodemon)</h3>
@@ -142,7 +142,8 @@
 
 	  </footer>
 
-
+<!-- hashedit snippet -->
+      <script hashedit-exclude="">var path=window.location.pathname;-1!=window.location.href.indexOf("#edit")&&(window.location="/edit?url="+path),window.onhashchange=function(){-1!=window.location.href.indexOf("#edit")&&(window.location="/edit?url="+path)};</script>
 	</body>
 
 </html>
